@@ -25,7 +25,7 @@
 				<img src="/logo.png" alt="Trocaê" class="hero-logo" />
 				<h1>Troque coisas<br /><span class="highlight">que você não usa</span><br />por coisas que<br /><strong>você precisa</strong></h1>
 				<p class="hero-sub">Uma nova forma de trocar coisas está chegando.</p>
-				<a href="#como-funciona" class="cta-button">Saiba mais</a>
+				<a href="#lista-de-espera" class="cta-button">Quero participar!</a>
 			</div>
 			<div class="hero-blob blob-teal"></div>
 			<div class="hero-blob blob-orange"></div>
@@ -94,13 +94,67 @@
 			</div>
 		</section>
 
-		<!-- CTA / Lançamento -->
-		<section class="section cta-section">
-			<div class="cta-content">
-				<img src="/logo.png" alt="Trocaê" class="cta-logo" />
-				<h2>João Pessoa<br />vai trocar.</h2>
-				<p>Uma nova forma de trocar coisas está chegando.</p>
-				<div class="launch-badge">Lançamento em breve em João Pessoa!</div>
+		<!-- Waiting List -->
+		<section id="lista-de-espera" class="section waitlist-section">
+			<div class="waitlist-card">
+				<div class="waitlist-badge">Vagas limitadas</div>
+				<h2>Entre na lista de espera</h2>
+				<p class="waitlist-desc">Cadastre-se agora e ganhe <strong>1 mês grátis</strong> quando o Trocaê lançar em João Pessoa!</p>
+				<div class="waitlist-gift">
+					<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+					<span>1 mês de uso gratuito para os primeiros cadastrados!</span>
+				</div>
+
+				<form id="waitlist-form" class="waitlist-form">
+					<div class="form-group">
+						<label for="whatsapp">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="var(--teal)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+							WhatsApp *
+						</label>
+						<input
+							type="tel"
+							id="whatsapp"
+							name="whatsapp"
+							placeholder="(83) 99999-9999"
+							required
+							maxlength="15"
+						/>
+					</div>
+					<div class="form-group">
+						<label for="email">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+							E-mail <span class="optional">(opcional)</span>
+						</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="seu@email.com"
+						/>
+					</div>
+					<button type="submit" class="submit-btn" id="submit-btn">
+						<span class="btn-text">Garantir minha vaga!</span>
+						<span class="btn-loading" style="display:none;">Enviando...</span>
+					</button>
+				</form>
+
+				<div id="form-success" class="form-message success" style="display:none;">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+					<h3>Você está na lista!</h3>
+					<p>Quando o Trocaê lançar, você será um dos primeiros a saber e ganhará <strong>1 mês grátis</strong>!</p>
+				</div>
+
+				<div id="form-duplicate" class="form-message duplicate" style="display:none;">
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+					<h3>Você já está cadastrado!</h3>
+					<p>Esse WhatsApp já está na nossa lista. Fique tranquilo, vamos te avisar!</p>
+				</div>
+
+				<div id="form-error" class="form-message error" style="display:none;">
+					<h3>Ops, algo deu errado.</h3>
+					<p>Tente novamente em alguns instantes.</p>
+				</div>
+
 				<div class="social-links">
 					<a href="https://instagram.com/trocaeoficial" target="_blank" rel="noopener noreferrer" class="instagram-link">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -120,6 +174,71 @@
 		</footer>
 	</body>
 </html>
+
+<script>
+	// WhatsApp mask: (XX) XXXXX-XXXX
+	const whatsappInput = document.getElementById('whatsapp') as HTMLInputElement;
+	whatsappInput.addEventListener('input', (e) => {
+		let v = (e.target as HTMLInputElement).value.replace(/\D/g, '');
+		if (v.length > 11) v = v.slice(0, 11);
+		if (v.length > 7) {
+			v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+		} else if (v.length > 2) {
+			v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+		} else if (v.length > 0) {
+			v = `(${v}`;
+		}
+		(e.target as HTMLInputElement).value = v;
+	});
+
+	// Form submit
+	const form = document.getElementById('waitlist-form') as HTMLFormElement;
+	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+	const btnText = submitBtn.querySelector('.btn-text') as HTMLElement;
+	const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLElement;
+
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault();
+
+		const whatsapp = whatsappInput.value;
+		const email = (document.getElementById('email') as HTMLInputElement).value;
+
+		// Validate minimum digits
+		const digits = whatsapp.replace(/\D/g, '');
+		if (digits.length < 10) {
+			whatsappInput.setCustomValidity('Informe um número válido com DDD');
+			whatsappInput.reportValidity();
+			return;
+		}
+		whatsappInput.setCustomValidity('');
+
+		submitBtn.disabled = true;
+		btnText.style.display = 'none';
+		btnLoading.style.display = 'inline';
+
+		try {
+			await fetch(
+				'https://script.google.com/macros/s/AKfycby594RKbd4mablwDRHv3ij-NtsgqISrm5wGtufMq7VuIK9wMJQKGXpIrgLSOPnLaZ49/exec',
+				{
+					method: 'POST',
+					mode: 'no-cors',
+					headers: { 'Content-Type': 'text/plain' },
+					body: JSON.stringify({ whatsapp: digits, email }),
+				}
+			);
+
+			// no-cors returns opaque response, so we assume success
+			form.style.display = 'none';
+			document.querySelector('.waitlist-gift')!.setAttribute('style', 'display:none');
+			(document.getElementById('form-success') as HTMLElement).style.display = 'block';
+		} catch {
+			(document.getElementById('form-error') as HTMLElement).style.display = 'block';
+			submitBtn.disabled = false;
+			btnText.style.display = 'inline';
+			btnLoading.style.display = 'none';
+		}
+	});
+</script>
 
 <style>
 	:root {
@@ -420,81 +539,214 @@
 		color: var(--text-dark);
 	}
 
-	/* CTA Section */
-	.cta-section {
+	/* Waitlist Section */
+	.waitlist-section {
 		text-align: center;
 		position: relative;
 	}
 
-	.cta-content {
+	.waitlist-card {
 		background: white;
 		border-radius: 24px;
-		padding: 4rem 2rem;
+		padding: 3rem 2rem;
 		box-shadow: 0 4px 30px rgba(0,0,0,0.06);
 		position: relative;
 		overflow: hidden;
+		max-width: 550px;
+		margin: 0 auto;
 	}
 
-	.cta-content::before {
+	.waitlist-card::before {
 		content: '';
 		position: absolute;
 		width: 250px;
 		height: 250px;
 		background: var(--teal);
-		opacity: 0.08;
+		opacity: 0.06;
 		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
 		bottom: -80px;
 		left: -60px;
 	}
 
-	.cta-content::after {
+	.waitlist-card::after {
 		content: '';
 		position: absolute;
 		width: 200px;
 		height: 200px;
 		background: var(--orange);
-		opacity: 0.08;
+		opacity: 0.06;
 		border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
 		top: -60px;
 		right: -40px;
 	}
 
-	.cta-logo {
-		width: 70px;
-		height: 70px;
-		margin-bottom: 1.5rem;
-	}
-
-	.cta-content h2 {
-		font-size: 2.5rem;
-		font-weight: 800;
-		line-height: 1.2;
-		margin-bottom: 1rem;
-		color: var(--text-dark);
-	}
-
-	.cta-content p {
-		color: var(--text-muted);
-		font-size: 1.1rem;
-		margin-bottom: 2rem;
-	}
-
-	.launch-badge {
+	.waitlist-badge {
 		display: inline-block;
-		background: var(--teal);
+		background: var(--orange);
 		color: white;
-		padding: 0.8rem 2rem;
+		padding: 0.4rem 1.2rem;
 		border-radius: 50px;
-		font-weight: 700;
-		font-size: 1rem;
+		font-weight: 800;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-bottom: 1.2rem;
+		animation: pulse 2s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.4); }
+		50% { box-shadow: 0 0 0 12px rgba(245, 166, 35, 0); }
+	}
+
+	.waitlist-card h2 {
+		font-size: 2rem;
+		margin-bottom: 0.8rem;
+	}
+
+	.waitlist-desc {
+		color: var(--text-muted);
+		font-size: 1.05rem;
+		margin-bottom: 1.2rem;
+		line-height: 1.5;
+	}
+
+	.waitlist-desc strong {
+		color: var(--teal);
+		font-weight: 800;
+	}
+
+	.waitlist-gift {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		background: var(--orange-light);
+		border: 2px solid var(--orange);
+		border-radius: 12px;
+		padding: 1rem 1.2rem;
 		margin-bottom: 2rem;
+		text-align: left;
 		position: relative;
 		z-index: 1;
 	}
+
+	.waitlist-gift svg {
+		flex-shrink: 0;
+		color: var(--orange);
+	}
+
+	.waitlist-gift span {
+		font-weight: 700;
+		font-size: 0.95rem;
+		color: var(--text-dark);
+	}
+
+	/* Form */
+	.waitlist-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		position: relative;
+		z-index: 1;
+	}
+
+	.form-group {
+		text-align: left;
+	}
+
+	.form-group label {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-weight: 700;
+		font-size: 0.9rem;
+		margin-bottom: 0.4rem;
+		color: var(--text-dark);
+	}
+
+	.form-group .optional {
+		font-weight: 400;
+		color: var(--text-muted);
+		font-size: 0.85rem;
+	}
+
+	.form-group input {
+		width: 100%;
+		padding: 0.9rem 1rem;
+		border: 2px solid #e0e0e0;
+		border-radius: 12px;
+		font-family: 'Nunito', sans-serif;
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--text-dark);
+		transition: border-color 0.3s ease;
+		background: var(--cream);
+	}
+
+	.form-group input:focus {
+		outline: none;
+		border-color: var(--teal);
+		background: white;
+	}
+
+	.form-group input::placeholder {
+		color: #b0b0b0;
+		font-weight: 400;
+	}
+
+	.submit-btn {
+		background: var(--teal);
+		color: white;
+		border: none;
+		padding: 1rem;
+		border-radius: 12px;
+		font-family: 'Nunito', sans-serif;
+		font-size: 1.1rem;
+		font-weight: 800;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 15px rgba(26, 138, 138, 0.3);
+		margin-top: 0.5rem;
+	}
+
+	.submit-btn:hover {
+		background: var(--teal-dark);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(26, 138, 138, 0.4);
+	}
+
+	.submit-btn:disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+	/* Form messages */
+	.form-message {
+		padding: 2rem 1rem;
+		position: relative;
+		z-index: 1;
+	}
+
+	.form-message h3 {
+		font-size: 1.3rem;
+		margin: 1rem 0 0.5rem;
+	}
+
+	.form-message p {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		line-height: 1.5;
+	}
+
+	.form-message.success h3 { color: var(--teal); }
+	.form-message.duplicate h3 { color: var(--orange-dark); }
+	.form-message.error h3 { color: #e74c3c; }
 
 	.social-links {
 		position: relative;
 		z-index: 1;
+		margin-top: 2rem;
 	}
 
 	.instagram-link {
