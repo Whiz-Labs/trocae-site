@@ -27,6 +27,11 @@
 				<h1>Troque coisas<br /><span class="highlight">que você não usa</span><br />por coisas que<br /><strong>você precisa</strong></h1>
 				<p class="hero-sub">Uma nova forma de trocar coisas está chegando.</p>
 				<a href="#lista-de-espera" class="cta-button">Quero participar!</a>
+				<a href="/pesquisa" class="survey-link">
+					<span class="survey-link-shimmer"></span>
+					<span class="survey-link-badge">2 meses grátis</span>
+					<span class="survey-link-text">Responda a pesquisa e teste o app primeiro →</span>
+				</a>
 			</div>
 			<div class="hero-blob blob-teal"></div>
 			<div class="hero-blob blob-orange"></div>
@@ -137,6 +142,7 @@
 						<span class="btn-text">Garantir minha vaga!</span>
 						<span class="btn-loading" style="display:none;">Enviando...</span>
 					</button>
+					<p class="consent-text">Ao enviar, você concorda em receber novidades do Trocaê pelo WhatsApp.</p>
 				</form>
 
 				<div id="form-success" class="form-message success" style="display:none;">
@@ -155,6 +161,14 @@
 					<h3>Ops, algo deu errado.</h3>
 					<p>Tente novamente em alguns instantes.</p>
 				</div>
+
+				<a href="/pesquisa" class="survey-banner">
+					<span class="survey-banner-icon">🎁</span>
+					<span class="survey-banner-text">
+						<strong>Quer ganhar 2 meses grátis?</strong>
+						<span>Responda a pesquisa e seja um dos primeiros a testar →</span>
+					</span>
+				</a>
 
 				<div class="social-links">
 					<a href="https://instagram.com/trocaeoficial" target="_blank" rel="noopener noreferrer" class="instagram-link">
@@ -231,7 +245,7 @@
 
 		try {
 			await fetch(
-				'https://script.google.com/macros/s/AKfycby594RKbd4mablwDRHv3ij-NtsgqISrm5wGtufMq7VuIK9wMJQKGXpIrgLSOPnLaZ49/exec',
+				'https://script.google.com/macros/s/AKfycbxpC1WwIhwPrBrp4a-amLbsADHtd0R0A-W1-I3k46LCVS1rAV5ONkk-G0d2dvj6ZHFP/exec',
 				{
 					method: 'POST',
 					mode: 'no-cors',
@@ -397,6 +411,118 @@
 		background: var(--teal-dark);
 		transform: translateY(-2px);
 		box-shadow: 0 6px 20px rgba(26, 138, 138, 0.4);
+	}
+
+	/* Survey link (hero) */
+	.survey-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.6rem;
+		margin-top: 1.5rem;
+		padding: 0.7rem 1.5rem;
+		background: white;
+		border: 2px solid var(--orange);
+		border-radius: 50px;
+		text-decoration: none;
+		color: var(--text-dark);
+		font-weight: 700;
+		font-size: 0.95rem;
+		transition: all 0.3s ease;
+		position: relative;
+		overflow: hidden;
+		animation: surveyBounce 3s ease-in-out infinite;
+	}
+
+	@keyframes surveyBounce {
+		0%, 100% { transform: translateY(0); }
+		50% { transform: translateY(-3px); }
+	}
+
+	.survey-link:hover {
+		background: var(--orange-light);
+		border-color: var(--orange-dark);
+		transform: translateY(-2px);
+		box-shadow: 0 4px 15px rgba(245, 166, 35, 0.25);
+	}
+
+	.survey-link-shimmer {
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(245, 166, 35, 0.15), transparent);
+		animation: shimmer 3s ease-in-out infinite;
+	}
+
+	@keyframes shimmer {
+		0% { left: -100%; }
+		50% { left: 100%; }
+		100% { left: 100%; }
+	}
+
+	.survey-link-badge {
+		background: var(--orange);
+		color: white;
+		padding: 0.2rem 0.7rem;
+		border-radius: 6px;
+		font-size: 0.75rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		flex-shrink: 0;
+	}
+
+	.survey-link-text {
+		font-weight: 700;
+	}
+
+	/* Survey banner (waitlist) */
+	.survey-banner {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		background: linear-gradient(135deg, var(--teal-light), var(--orange-light));
+		border: 2px solid var(--teal);
+		border-radius: 14px;
+		padding: 1rem 1.2rem;
+		text-decoration: none;
+		color: var(--text-dark);
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+		transition: all 0.3s ease;
+		position: relative;
+		z-index: 1;
+		text-align: left;
+	}
+
+	.survey-banner:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 15px rgba(26, 138, 138, 0.15);
+	}
+
+	.survey-banner-icon {
+		font-size: 1.8rem;
+		line-height: 1;
+		flex-shrink: 0;
+	}
+
+	.survey-banner-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
+	.survey-banner-text strong {
+		font-size: 0.95rem;
+		font-weight: 800;
+		color: var(--teal-dark);
+	}
+
+	.survey-banner-text span {
+		font-size: 0.85rem;
+		color: var(--text-muted);
+		font-weight: 600;
 	}
 
 	/* Blobs */
@@ -741,6 +867,14 @@
 		background: var(--teal-dark);
 		transform: translateY(-2px);
 		box-shadow: 0 6px 20px rgba(26, 138, 138, 0.4);
+	}
+
+	.consent-text {
+		font-size: 0.75rem;
+		color: var(--text-muted);
+		text-align: center;
+		margin-top: 0.6rem;
+		opacity: 0.7;
 	}
 
 	.submit-btn:disabled {

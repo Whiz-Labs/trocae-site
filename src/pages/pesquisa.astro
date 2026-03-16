@@ -1,0 +1,1034 @@
+---
+
+---
+
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/logo.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Pesquisa Trocaê - Responda e seja um dos primeiros a testar o app!" />
+		<title>Pesquisa Trocaê - Seja um dos primeiros!</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<nav>
+			<a href="/" class="nav-link">
+				<img src="/logo.png" alt="Trocaê Logo" class="nav-logo" />
+				<span class="nav-brand">Trocaê</span>
+			</a>
+		</nav>
+
+		<main>
+			<!-- Header -->
+			<!-- Intro -->
+			<div class="intro-screen" id="intro-screen">
+				<img src="/logo.png" alt="Trocaê" class="intro-logo" />
+				<div class="early-badge">Acesso antecipado</div>
+				<h1>Você trocaria algo<br />que não usa mais?</h1>
+				<p>Responda rápido e seja um dos <strong>primeiros a testar o Trocaê</strong>!</p>
+				<div class="reward-box">
+					<div class="reward-item">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
+						<span><strong>2 meses grátis</strong> quando o app lançar</span>
+					</div>
+					<div class="reward-item">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+						<span>Acesso antecipado para testar</span>
+					</div>
+					<div class="reward-item">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 10-4 4-4-4"/></svg>
+						<span>Assinatura com desconto especial</span>
+					</div>
+				</div>
+				<button type="button" class="start-btn" id="start-btn">Começar!</button>
+				<p class="intro-time">Leva menos de 30 segundos</p>
+			</div>
+
+			<!-- Survey Form -->
+			<form id="survey-form" class="survey-form" style="display:none;">
+				<!-- Progress -->
+				<div class="progress-bar">
+					<div class="progress-fill" id="progress-fill"></div>
+				</div>
+				<div class="progress-text"><span id="step-current">1</span> de 5</div>
+
+				<!-- Step 1 -->
+				<div class="step active" data-step="1">
+					<h2>Você tem coisas em casa que não usa mais?</h2>
+					<div class="options">
+						<label class="option">
+							<input type="radio" name="q1" value="Sim, várias coisas" required />
+							<span class="option-card">
+								<span class="option-emoji">📦</span>
+								<span class="option-text">Sim, várias coisas</span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="radio" name="q1" value="Algumas" />
+							<span class="option-card">
+								<span class="option-emoji">📋</span>
+								<span class="option-text">Algumas</span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="radio" name="q1" value="Não muito" />
+							<span class="option-card">
+								<span class="option-emoji">🤷</span>
+								<span class="option-text">Não muito</span>
+							</span>
+						</label>
+					</div>
+				</div>
+
+				<!-- Step 2 -->
+				<div class="step" data-step="2">
+					<button type="button" class="back-btn" onclick="goToStep(1)">← Voltar</button>
+					<h2>O que você mais trocaria? <span class="hint">(escolha até 2)</span></h2>
+					<div class="options">
+						<label class="option">
+							<input type="checkbox" name="q2" value="Roupas" />
+							<span class="option-card">
+								<span class="option-emoji">👕</span>
+								<span class="option-text">Roupas <span class="option-hint">(camisetas, calças, vestidos…)</span></span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="checkbox" name="q2" value="Brinquedos" />
+							<span class="option-card">
+								<span class="option-emoji">🧸</span>
+								<span class="option-text">Brinquedos <span class="option-hint">(jogos, bonecas, carrinhos…)</span></span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="checkbox" name="q2" value="Eletrônicos" />
+							<span class="option-card">
+								<span class="option-emoji">📱</span>
+								<span class="option-text">Eletrônicos <span class="option-hint">(celular, fone, tablet…)</span></span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="checkbox" name="q2" value="Livros" />
+							<span class="option-card">
+								<span class="option-emoji">📚</span>
+								<span class="option-text">Livros <span class="option-hint">(romance, didático, HQ…)</span></span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="checkbox" name="q2" value="Acessórios" />
+							<span class="option-card">
+								<span class="option-emoji">👜</span>
+								<span class="option-text">Acessórios <span class="option-hint">(bolsas, relógios, bijuterias, perfumes…)</span></span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="checkbox" name="q2" value="Móveis / Decoração" />
+							<span class="option-card">
+								<span class="option-emoji">🪑</span>
+								<span class="option-text">Móveis / Decoração <span class="option-hint">(cadeira, quadro, luminária…)</span></span>
+							</span>
+						</label>
+					</div>
+					<button type="button" class="next-btn" id="q2-next" disabled>Próximo →</button>
+				</div>
+
+				<!-- Step 3 -->
+				<div class="step" data-step="3">
+					<button type="button" class="back-btn" onclick="goToStep(2)">← Voltar</button>
+					<h2>O que te motivaria mais a trocar?</h2>
+					<div class="options">
+						<label class="option">
+							<input type="radio" name="q3" value="Economizar dinheiro" required />
+							<span class="option-card">
+								<span class="option-emoji">💰</span>
+								<span class="option-text">Economizar dinheiro</span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="radio" name="q3" value="Ajudar o meio ambiente" />
+							<span class="option-card">
+								<span class="option-emoji">🌱</span>
+								<span class="option-text">Ajudar o meio ambiente</span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="radio" name="q3" value="Conhecer pessoas" />
+							<span class="option-card">
+								<span class="option-emoji">🤝</span>
+								<span class="option-text">Conhecer pessoas</span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="radio" name="q3" value="Desapegar de coisas" />
+							<span class="option-card">
+								<span class="option-emoji">📦</span>
+								<span class="option-text">Desapegar de coisas</span>
+							</span>
+						</label>
+					</div>
+				</div>
+
+				<!-- Step 4 -->
+				<div class="step" data-step="4">
+					<button type="button" class="back-btn" onclick="goToStep(3)">← Voltar</button>
+					<h2>Você usaria um aplicativo para trocar coisas com pessoas da sua cidade?</h2>
+					<div class="options">
+						<label class="option">
+							<input type="radio" name="q4" value="Sim" required />
+							<span class="option-card">
+								<span class="option-emoji">🙌</span>
+								<span class="option-text">Sim!</span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="radio" name="q4" value="Talvez" />
+							<span class="option-card">
+								<span class="option-emoji">🤔</span>
+								<span class="option-text">Talvez</span>
+							</span>
+						</label>
+						<label class="option">
+							<input type="radio" name="q4" value="Não" />
+							<span class="option-card">
+								<span class="option-emoji">😐</span>
+								<span class="option-text">Não</span>
+							</span>
+						</label>
+					</div>
+				</div>
+
+				<!-- Step 5: WhatsApp -->
+				<div class="step" data-step="5">
+					<button type="button" class="back-btn" onclick="goToStep(4)">← Voltar</button>
+					<h2>Quase lá! Deixe seu WhatsApp para garantir o acesso antecipado</h2>
+					<p class="step-sub">Vamos te avisar quando o app estiver pronto. Você ganhará <strong>2 meses grátis</strong> + desconto especial!</p>
+					<div class="form-group">
+						<label for="whatsapp">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="var(--teal)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+							WhatsApp
+						</label>
+						<input
+							type="tel"
+							id="whatsapp"
+							name="whatsapp"
+							placeholder="(83) 99999-9999"
+							required
+							maxlength="15"
+						/>
+					</div>
+					<button type="submit" class="submit-btn" id="submit-btn">
+						<span class="btn-text">Garantir meu acesso!</span>
+						<span class="btn-loading" style="display:none;">Enviando...</span>
+					</button>
+					<p class="consent-text">Ao enviar, você concorda em receber novidades do Trocaê pelo WhatsApp.</p>
+					</div>
+			</form>
+
+			<!-- Success -->
+			<div id="survey-success" class="success-screen" style="display:none;">
+				<div class="success-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+				</div>
+				<h2>Você está dentro!</h2>
+				<p>Obrigado por responder! Você será um dos <strong>primeiros a testar o Trocaê</strong>.</p>
+				<div class="success-rewards">
+					<div class="success-reward">2 meses grátis</div>
+					<div class="success-reward">Acesso antecipado</div>
+					<div class="success-reward">Desconto especial</div>
+				</div>
+				<p class="success-sub">Vamos te avisar pelo WhatsApp quando estiver tudo pronto!</p>
+				<div class="success-actions">
+					<a href="https://instagram.com/trocaeoficial" target="_blank" rel="noopener noreferrer" class="instagram-btn">
+						<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+						Siga @trocaeoficial
+					</a>
+					<a href="/" class="home-link">Voltar ao site</a>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
+
+<script>
+	const steps = document.querySelectorAll('.step') as NodeListOf<HTMLElement>;
+	const progressFill = document.getElementById('progress-fill')!;
+	const stepCurrent = document.getElementById('step-current')!;
+	const totalSteps = steps.length;
+	let currentStep = 1;
+
+	function updateProgress() {
+		const pct = (currentStep / totalSteps) * 100;
+		progressFill.style.width = `${pct}%`;
+		stepCurrent.textContent = String(currentStep);
+	}
+
+	// Global so onclick="goToStep(n)" works
+	(window as any).goToStep = goToStep;
+
+	// Start button
+	const introScreen = document.getElementById('intro-screen')!;
+	const surveyForm = document.getElementById('survey-form') as HTMLFormElement;
+
+	document.getElementById('start-btn')!.addEventListener('click', () => {
+		introScreen.style.display = 'none';
+		surveyForm.style.display = 'block';
+	});
+
+	function goToStep(n: number) {
+		const goingBack = n < currentStep;
+		steps.forEach(s => s.classList.remove('active', 'exit', 'exit-right'));
+
+		const prev = document.querySelector(`.step[data-step="${currentStep}"]`) as HTMLElement;
+		if (prev) prev.classList.add(goingBack ? 'exit-right' : 'exit');
+
+		currentStep = n;
+		updateProgress();
+
+		setTimeout(() => {
+			steps.forEach(s => s.classList.remove('active', 'exit', 'exit-right'));
+			const next = document.querySelector(`.step[data-step="${n}"]`) as HTMLElement;
+			if (next) {
+				next.style.animation = goingBack ? 'fadeInLeft 0.3s ease' : 'fadeIn 0.3s ease';
+				next.classList.add('active');
+			}
+		}, 250);
+	}
+
+	// Auto-advance on radio select (steps 1, 3, 4)
+	document.querySelectorAll('.step[data-step="1"] input, .step[data-step="3"] input, .step[data-step="4"] input').forEach(input => {
+		input.addEventListener('change', () => {
+			const step = parseInt((input as HTMLElement).closest('.step')!.getAttribute('data-step')!);
+			setTimeout(() => goToStep(step + 1), 400);
+		});
+	});
+
+	// Step 2: checkbox with max 2 selections
+	const q2Checkboxes = document.querySelectorAll('input[name="q2"]') as NodeListOf<HTMLInputElement>;
+	const q2NextBtn = document.getElementById('q2-next') as HTMLButtonElement;
+
+	q2Checkboxes.forEach(cb => {
+		cb.addEventListener('change', () => {
+			const checked = document.querySelectorAll('input[name="q2"]:checked');
+
+			// Enforce max 2
+			if (checked.length > 2) {
+				cb.checked = false;
+				return;
+			}
+
+			// Enable/disable next button
+			q2NextBtn.disabled = checked.length === 0;
+		});
+	});
+
+	q2NextBtn.addEventListener('click', () => {
+		const checked = document.querySelectorAll('input[name="q2"]:checked');
+		if (checked.length > 0) {
+			goToStep(3);
+		}
+	});
+
+	updateProgress();
+
+	// WhatsApp mask
+	const whatsappInput = document.getElementById('whatsapp') as HTMLInputElement;
+	whatsappInput.addEventListener('input', (e) => {
+		let v = (e.target as HTMLInputElement).value.replace(/\D/g, '');
+		if (v.length > 11) v = v.slice(0, 11);
+		if (v.length > 7) {
+			v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+		} else if (v.length > 2) {
+			v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+		} else if (v.length > 0) {
+			v = `(${v}`;
+		}
+		(e.target as HTMLInputElement).value = v;
+	});
+
+	// Submit
+	const form = document.getElementById('survey-form') as HTMLFormElement;
+	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+	const btnText = submitBtn.querySelector('.btn-text') as HTMLElement;
+	const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLElement;
+
+	form.addEventListener('submit', async (e) => {
+		e.preventDefault();
+
+		const whatsapp = whatsappInput.value;
+		const digits = whatsapp.replace(/\D/g, '');
+		if (digits.length < 10) {
+			whatsappInput.setCustomValidity('Informe um número válido com DDD');
+			whatsappInput.reportValidity();
+			return;
+		}
+		whatsappInput.setCustomValidity('');
+
+		const q1 = (document.querySelector('input[name="q1"]:checked') as HTMLInputElement)?.value || '';
+		const q2Checked = document.querySelectorAll('input[name="q2"]:checked') as NodeListOf<HTMLInputElement>;
+		const q2 = Array.from(q2Checked).map(c => c.value).join(', ');
+		const q3 = (document.querySelector('input[name="q3"]:checked') as HTMLInputElement)?.value || '';
+		const q4 = (document.querySelector('input[name="q4"]:checked') as HTMLInputElement)?.value || '';
+
+		submitBtn.disabled = true;
+		btnText.style.display = 'none';
+		btnLoading.style.display = 'inline';
+
+		try {
+			await fetch(
+				'https://script.google.com/macros/s/AKfycbxpC1WwIhwPrBrp4a-amLbsADHtd0R0A-W1-I3k46LCVS1rAV5ONkk-G0d2dvj6ZHFP/exec',
+				{
+					method: 'POST',
+					mode: 'no-cors',
+					headers: { 'Content-Type': 'text/plain' },
+					body: JSON.stringify({
+						tipo: 'pesquisa',
+						whatsapp: digits,
+						q1,
+						q2,
+						q3,
+						q4,
+					}),
+				}
+			);
+
+			surveyForm.style.display = 'none';
+			(document.getElementById('survey-success') as HTMLElement).style.display = 'block';
+		} catch {
+			submitBtn.disabled = false;
+			btnText.style.display = 'inline';
+			btnLoading.style.display = 'none';
+		}
+	});
+</script>
+
+<style>
+	:root {
+		--teal: #1a8a8a;
+		--teal-dark: #147272;
+		--teal-light: #e0f4f4;
+		--orange: #f5a623;
+		--orange-dark: #e0941a;
+		--orange-light: #fef3e0;
+		--cream: #faf6f1;
+		--cream-dark: #f0e8dd;
+		--text-dark: #2c3e50;
+		--text-muted: #6b7c8a;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		font-family: 'Nunito', sans-serif;
+		color: var(--text-dark);
+		background: var(--cream);
+		min-height: 100vh;
+	}
+
+	/* Nav */
+	nav {
+		display: flex;
+		align-items: center;
+		padding: 1rem 2rem;
+		border-bottom: 1px solid rgba(0,0,0,0.05);
+	}
+
+	.nav-link {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		text-decoration: none;
+	}
+
+	.nav-logo {
+		width: 36px;
+		height: 36px;
+	}
+
+	.nav-brand {
+		font-size: 1.4rem;
+		font-weight: 800;
+		color: var(--teal);
+	}
+
+	/* Main */
+	main {
+		max-width: 520px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 4rem;
+		min-height: calc(100vh - 60px);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	/* Intro Screen */
+	.intro-screen {
+		text-align: center;
+		animation: fadeIn 0.4s ease;
+	}
+
+	.intro-logo {
+		width: 70px;
+		height: 70px;
+		margin: 0 auto 1rem;
+		display: block;
+	}
+
+	.start-btn {
+		width: 100%;
+		margin-top: 1.5rem;
+		background: var(--teal);
+		color: white;
+		border: none;
+		padding: 1rem;
+		border-radius: 12px;
+		font-family: 'Nunito', sans-serif;
+		font-size: 1.2rem;
+		font-weight: 800;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 15px rgba(26, 138, 138, 0.3);
+	}
+
+	.start-btn:hover {
+		background: var(--teal-dark);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(26, 138, 138, 0.4);
+	}
+
+	.intro-time {
+		font-size: 0.8rem;
+		color: var(--text-muted);
+		margin-top: 0.6rem;
+		opacity: 0.7;
+	}
+
+	.early-badge {
+		display: inline-block;
+		background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+		color: white;
+		padding: 0.4rem 1.2rem;
+		border-radius: 50px;
+		font-weight: 800;
+		font-size: 0.85rem;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		margin-bottom: 1rem;
+		animation: glow 2s ease-in-out infinite;
+	}
+
+	@keyframes glow {
+		0%, 100% { box-shadow: 0 0 0 0 rgba(26, 138, 138, 0.4); }
+		50% { box-shadow: 0 0 0 10px rgba(26, 138, 138, 0); }
+	}
+
+	.intro-screen h1 {
+		font-size: 1.8rem;
+		font-weight: 800;
+		line-height: 1.3;
+		margin-bottom: 0.8rem;
+	}
+
+	.intro-screen > p {
+		color: var(--text-muted);
+		font-size: 1rem;
+		line-height: 1.5;
+		margin-bottom: 1.2rem;
+	}
+
+	.intro-screen > p strong {
+		color: var(--teal);
+	}
+
+	/* Reward Box */
+	.reward-box {
+		background: white;
+		border-radius: 16px;
+		padding: 1rem 1.2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+		border: 2px solid var(--orange);
+	}
+
+	.reward-item {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		font-size: 0.9rem;
+		color: var(--text-dark);
+	}
+
+	.reward-item svg {
+		flex-shrink: 0;
+		color: var(--orange);
+	}
+
+	/* Progress */
+	.progress-bar {
+		height: 6px;
+		background: var(--cream-dark);
+		border-radius: 3px;
+		overflow: hidden;
+		margin-bottom: 0.5rem;
+	}
+
+	.progress-fill {
+		height: 100%;
+		background: linear-gradient(90deg, var(--teal), var(--orange));
+		border-radius: 3px;
+		width: 25%;
+		transition: width 0.4s ease;
+	}
+
+	.progress-text {
+		text-align: right;
+		font-size: 0.8rem;
+		color: var(--text-muted);
+		font-weight: 600;
+		margin-bottom: 1.5rem;
+	}
+
+	/* Steps */
+	.step {
+		display: none;
+		animation: fadeIn 0.3s ease;
+	}
+
+	.step.active {
+		display: block;
+	}
+
+	.step.exit {
+		display: block;
+		animation: fadeOut 0.25s ease forwards;
+	}
+
+	.step.exit-right {
+		display: block;
+		animation: fadeOutRight 0.25s ease forwards;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateX(20px); }
+		to { opacity: 1; transform: translateX(0); }
+	}
+
+	@keyframes fadeInLeft {
+		from { opacity: 0; transform: translateX(-20px); }
+		to { opacity: 1; transform: translateX(0); }
+	}
+
+	@keyframes fadeOut {
+		from { opacity: 1; transform: translateX(0); }
+		to { opacity: 0; transform: translateX(-20px); }
+	}
+
+	@keyframes fadeOutRight {
+		from { opacity: 1; transform: translateX(0); }
+		to { opacity: 0; transform: translateX(20px); }
+	}
+
+	/* Back button */
+	.back-btn {
+		background: none;
+		border: none;
+		color: var(--text-muted);
+		font-family: 'Nunito', sans-serif;
+		font-size: 0.9rem;
+		font-weight: 700;
+		cursor: pointer;
+		padding: 0.3rem 0;
+		margin-bottom: 0.8rem;
+		transition: color 0.2s ease;
+	}
+
+	.back-btn:hover {
+		color: var(--teal);
+	}
+
+	/* Next button (step 2) */
+	.next-btn {
+		width: 100%;
+		margin-top: 1rem;
+		background: var(--teal);
+		color: white;
+		border: none;
+		padding: 0.8rem;
+		border-radius: 12px;
+		font-family: 'Nunito', sans-serif;
+		font-size: 1rem;
+		font-weight: 800;
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.next-btn:hover:not(:disabled) {
+		background: var(--teal-dark);
+		transform: translateY(-2px);
+	}
+
+	.next-btn:disabled {
+		opacity: 0.4;
+		cursor: not-allowed;
+	}
+
+	/* Hint text */
+	.hint {
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--orange);
+	}
+
+	.step h2 {
+		font-size: 1.3rem;
+		font-weight: 800;
+		margin-bottom: 1.5rem;
+		line-height: 1.4;
+	}
+
+	.step-sub {
+		color: var(--text-muted);
+		font-size: 0.95rem;
+		margin-bottom: 1.5rem;
+		line-height: 1.5;
+	}
+
+	.step-sub strong {
+		color: var(--teal);
+	}
+
+	/* Options */
+	.options {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.option {
+		cursor: pointer;
+	}
+
+	.option input[type="radio"],
+	.option input[type="checkbox"] {
+		display: none;
+	}
+
+	.option-card {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem 1.2rem;
+		background: white;
+		border: 2px solid #e8e8e8;
+		border-radius: 14px;
+		transition: all 0.2s ease;
+	}
+
+	.option-card:hover {
+		border-color: var(--teal-light);
+		background: var(--teal-light);
+	}
+
+	.option input:checked + .option-card,
+	.option input[type="checkbox"]:checked + .option-card {
+		border-color: var(--teal);
+		background: var(--teal-light);
+		box-shadow: 0 0 0 3px rgba(26, 138, 138, 0.15);
+	}
+
+	.option-emoji {
+		font-size: 1.5rem;
+		line-height: 1;
+	}
+
+	.option-text {
+		font-weight: 700;
+		font-size: 1rem;
+		color: var(--text-dark);
+	}
+
+	.option-hint {
+		font-weight: 400;
+		font-size: 0.8rem;
+		color: var(--text-muted);
+	}
+
+	/* Instagram link (step 5) */
+	.step-instagram {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		margin-top: 1.5rem;
+		padding: 0.8rem 1rem;
+		background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+		border-radius: 14px;
+		text-decoration: none;
+		color: white;
+		transition: all 0.3s ease;
+		animation: igPulse 2.5s ease-in-out infinite;
+	}
+
+	@keyframes igPulse {
+		0%, 100% { box-shadow: 0 0 0 0 rgba(131, 58, 180, 0.3); }
+		50% { box-shadow: 0 0 0 8px rgba(131, 58, 180, 0); }
+	}
+
+	.step-instagram:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(131, 58, 180, 0.3);
+	}
+
+	.ig-icon-wrap {
+		width: 40px;
+		height: 40px;
+		background: rgba(255,255,255,0.2);
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.ig-text {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+	}
+
+	.ig-text strong {
+		font-size: 0.95rem;
+		font-weight: 800;
+	}
+
+	.ig-text span {
+		font-size: 0.8rem;
+		opacity: 0.9;
+	}
+
+	/* Form group (step 5) */
+	.form-group {
+		margin-bottom: 1rem;
+	}
+
+	.form-group label {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-weight: 700;
+		font-size: 0.9rem;
+		margin-bottom: 0.4rem;
+		color: var(--text-dark);
+	}
+
+	.form-group input {
+		width: 100%;
+		padding: 0.9rem 1rem;
+		border: 2px solid #e0e0e0;
+		border-radius: 12px;
+		font-family: 'Nunito', sans-serif;
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: var(--text-dark);
+		transition: border-color 0.3s ease;
+		background: white;
+	}
+
+	.form-group input:focus {
+		outline: none;
+		border-color: var(--teal);
+	}
+
+	.form-group input::placeholder {
+		color: #b0b0b0;
+		font-weight: 400;
+	}
+
+	.submit-btn {
+		width: 100%;
+		background: var(--teal);
+		color: white;
+		border: none;
+		padding: 1rem;
+		border-radius: 12px;
+		font-family: 'Nunito', sans-serif;
+		font-size: 1.1rem;
+		font-weight: 800;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 15px rgba(26, 138, 138, 0.3);
+	}
+
+	.submit-btn:hover {
+		background: var(--teal-dark);
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(26, 138, 138, 0.4);
+	}
+
+	.consent-text {
+		font-size: 0.75rem;
+		color: var(--text-muted);
+		text-align: center;
+		margin-top: 0.6rem;
+		opacity: 0.7;
+	}
+
+	.submit-btn:disabled {
+		opacity: 0.7;
+		cursor: not-allowed;
+		transform: none;
+	}
+
+	/* Success Screen */
+	.success-screen {
+		text-align: center;
+		animation: fadeIn 0.4s ease;
+	}
+
+	.success-icon {
+		margin-bottom: 1rem;
+	}
+
+	.success-screen h2 {
+		font-size: 2rem;
+		font-weight: 900;
+		color: var(--teal);
+		margin-bottom: 0.8rem;
+	}
+
+	.success-screen > p {
+		color: var(--text-muted);
+		font-size: 1rem;
+		line-height: 1.5;
+		margin-bottom: 1.5rem;
+	}
+
+	.success-rewards {
+		display: flex;
+		gap: 0.6rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-bottom: 1.5rem;
+	}
+
+	.success-reward {
+		background: var(--orange-light);
+		color: var(--orange-dark);
+		padding: 0.4rem 1rem;
+		border-radius: 50px;
+		font-weight: 800;
+		font-size: 0.85rem;
+	}
+
+	.success-sub {
+		color: var(--text-muted);
+		font-size: 0.9rem;
+		margin-bottom: 2rem;
+	}
+
+	.success-actions {
+		display: flex;
+		flex-direction: column;
+		gap: 0.8rem;
+		align-items: center;
+	}
+
+	.instagram-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: var(--teal);
+		color: white;
+		text-decoration: none;
+		padding: 0.8rem 1.8rem;
+		border-radius: 12px;
+		font-weight: 700;
+		font-size: 1rem;
+		transition: all 0.3s ease;
+	}
+
+	.instagram-btn:hover {
+		background: var(--teal-dark);
+		transform: translateY(-2px);
+	}
+
+	.home-link {
+		color: var(--text-muted);
+		text-decoration: none;
+		font-weight: 600;
+		font-size: 0.9rem;
+	}
+
+	.home-link:hover {
+		color: var(--text-dark);
+	}
+
+	/* Responsive */
+	@media (max-width: 480px) {
+		main {
+			padding: 1rem 1rem 3rem;
+		}
+
+		.intro-screen h1 {
+			font-size: 1.4rem;
+		}
+
+		.intro-screen > p {
+			font-size: 0.9rem;
+		}
+
+		.reward-box {
+			padding: 0.8rem 1rem;
+		}
+
+		.reward-item {
+			font-size: 0.82rem;
+		}
+
+		.reward-item svg {
+			width: 20px;
+			height: 20px;
+		}
+
+		.step h2 {
+			font-size: 1.15rem;
+		}
+
+		.option-card {
+			padding: 0.8rem 1rem;
+		}
+
+		.option-emoji {
+			font-size: 1.3rem;
+		}
+
+		.option-text {
+			font-size: 0.9rem;
+		}
+
+		.option-hint {
+			font-size: 0.72rem;
+		}
+
+		.options {
+			gap: 0.5rem;
+		}
+
+		.success-rewards {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.success-screen h2 {
+			font-size: 1.6rem;
+		}
+	}
+</style>
