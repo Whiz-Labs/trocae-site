@@ -16,13 +16,14 @@
 	</head>
 	<body>
 		<!-- Hero Section -->
+		<nav id="navbar">
+			<img src="/logo.png" alt="Trocaê Logo" class="nav-logo" />
+			<span class="nav-brand">Trocaê</span>
+		</nav>
 		<header class="hero">
-			<nav>
-				<img src="/logo.png" alt="Trocaê Logo" class="nav-logo" />
-				<span class="nav-brand">Trocaê</span>
-			</nav>
 			<div class="hero-content">
 				<img src="/logo.png" alt="Trocaê" class="hero-logo" />
+				<span class="hero-brand">Trocaê</span>
 				<h1>Troque coisas<br /><span class="highlight">que você não usa</span><br />por coisas que<br /><strong>você precisa</strong></h1>
 				<p class="hero-sub">Uma nova forma de trocar coisas está chegando.</p>
 				<a href="#lista-de-espera" class="cta-button">Quero participar!</a>
@@ -176,6 +177,18 @@
 </html>
 
 <script>
+	// Nav scroll behavior
+	const navbar = document.getElementById('navbar')!;
+	const hero = document.querySelector('.hero') as HTMLElement;
+
+	const observer = new IntersectionObserver(
+		([entry]) => {
+			navbar.classList.toggle('visible', !entry.isIntersecting);
+		},
+		{ threshold: 0.05 }
+	);
+	observer.observe(hero);
+
 	// WhatsApp mask: (XX) XXXXX-XXXX
 	const whatsappInput = document.getElementById('whatsapp') as HTMLInputElement;
 	whatsappInput.addEventListener('input', (e) => {
@@ -281,10 +294,17 @@
 		align-items: center;
 		gap: 0.5rem;
 		padding: 1rem 2rem;
-		background: rgba(250, 246, 241, 0.9);
+		background: rgba(250, 246, 241, 0.95);
 		backdrop-filter: blur(10px);
 		z-index: 100;
 		border-bottom: 1px solid rgba(0,0,0,0.05);
+		box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+		transform: translateY(-100%);
+		transition: transform 0.3s ease;
+	}
+
+	nav.visible {
+		transform: translateY(0);
 	}
 
 	.nav-logo {
@@ -307,7 +327,7 @@
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-		padding: 6rem 2rem 4rem;
+		padding: 2rem 2rem 8rem;
 		overflow: hidden;
 	}
 
@@ -319,8 +339,16 @@
 	.hero-logo {
 		width: 100px;
 		height: 100px;
-		margin-bottom: 1.5rem;
+		margin-bottom: 0.2rem;
 		animation: float 3s ease-in-out infinite;
+	}
+
+	.hero-brand {
+		display: block;
+		font-size: 2rem;
+		font-weight: 900;
+		color: var(--teal);
+		margin-bottom: 0.8rem;
 	}
 
 	@keyframes float {
