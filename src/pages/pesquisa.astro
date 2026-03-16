@@ -15,12 +15,6 @@
 		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
 	</head>
 	<body>
-		<nav>
-			<a href="/" class="nav-link">
-				<img src="/logo.png" alt="Trocaê Logo" class="nav-logo" />
-				<span class="nav-brand">Trocaê</span>
-			</a>
-		</nav>
 
 		<main>
 			<!-- Header -->
@@ -50,6 +44,9 @@
 
 			<!-- Survey Form -->
 			<form id="survey-form" class="survey-form" style="display:none;">
+				<a href="/" class="form-logo-link">
+					<img src="/logo.png" alt="Trocaê" class="form-logo" />
+				</a>
 				<!-- Progress -->
 				<div class="progress-bar">
 					<div class="progress-fill" id="progress-fill"></div>
@@ -229,9 +226,7 @@
 
 			<!-- Success -->
 			<div id="survey-success" class="success-screen" style="display:none;">
-				<div class="success-icon">
-					<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-				</div>
+				<img src="/logo.png" alt="Trocaê" class="success-logo" />
 				<h2>Você está dentro!</h2>
 				<p>Obrigado por responder! Você será um dos <strong>primeiros a testar o Trocaê</strong>.</p>
 				<div class="success-rewards">
@@ -431,41 +426,34 @@
 		min-height: 100vh;
 	}
 
-	/* Nav */
-	nav {
-		display: flex;
-		align-items: center;
-		padding: 1rem 2rem;
-		border-bottom: 1px solid rgba(0,0,0,0.05);
-	}
-
-	.nav-link {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
-		text-decoration: none;
-	}
-
-	.nav-logo {
-		width: 36px;
-		height: 36px;
-	}
-
-	.nav-brand {
-		font-size: 1.4rem;
-		font-weight: 800;
-		color: var(--teal);
-	}
-
 	/* Main */
 	main {
 		max-width: 520px;
 		margin: 0 auto;
 		padding: 2rem 1.5rem 4rem;
-		min-height: calc(100vh - 60px);
+		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+	}
+
+	/* Form logo */
+	.form-logo-link {
+		display: block;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	.form-logo {
+		width: 55px;
+		height: 55px;
+	}
+
+	.success-logo {
+		width: 60px;
+		height: 60px;
+		margin: 0 auto 1rem;
+		display: block;
 	}
 
 	/* Intro Screen */
@@ -891,10 +879,6 @@
 	.success-screen {
 		text-align: center;
 		animation: fadeIn 0.4s ease;
-	}
-
-	.success-icon {
-		margin-bottom: 1rem;
 	}
 
 	.success-screen h2 {
