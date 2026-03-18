@@ -26,10 +26,10 @@
 				<span class="hero-brand">Trocaê</span>
 				<h1>Troque coisas<br /><span class="highlight">que você não usa</span><br />por coisas que<br /><strong>você precisa</strong></h1>
 				<p class="hero-sub">Uma nova forma de trocar coisas está chegando.</p>
-				<a href="/pesquisa" class="cta-button">
+				<div class="cta-wrapper">
 					<span class="cta-badge">2 meses grátis</span>
-					Responda a pesquisa e teste primeiro!
-				</a>
+					<a href="/pesquisa" class="cta-button">Responda a pesquisa e teste primeiro!</a>
+				</div>
 				<a href="#lista-de-espera" class="secondary-link">Ou entre na lista de espera →</a>
 			</div>
 			<div class="hero-blob blob-teal"></div>
@@ -244,7 +244,7 @@
 
 		try {
 			await fetch(
-				'https://script.google.com/macros/s/AKfycbxpC1WwIhwPrBrp4a-amLbsADHtd0R0A-W1-I3k46LCVS1rAV5ONkk-G0d2dvj6ZHFP/exec',
+				'https://script.google.com/macros/s/AKfycbwttuOvcTyfwsHkMSDMwcry7k5Tq52_DIPteYCsC8BeStLQ2IIxg0g-CV90hB7d-Zvx/exec',
 				{
 					method: 'POST',
 					mode: 'no-cors',
@@ -393,6 +393,30 @@
 		margin-bottom: 2rem;
 	}
 
+	.cta-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.cta-badge {
+		background: var(--orange);
+		color: white;
+		padding: 0.25rem 0.8rem;
+		border-radius: 50px;
+		font-size: 0.75rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		animation: pulse 2s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.4); }
+		50% { box-shadow: 0 0 0 8px rgba(245, 166, 35, 0); }
+	}
+
 	.cta-button {
 		display: inline-block;
 		background: var(--orange);
@@ -410,18 +434,6 @@
 		background: var(--orange-dark);
 		transform: translateY(-2px);
 		box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4);
-	}
-
-	.cta-badge {
-		background: rgba(255,255,255,0.25);
-		color: white;
-		padding: 0.15rem 0.6rem;
-		border-radius: 6px;
-		font-size: 0.7rem;
-		font-weight: 800;
-		text-transform: uppercase;
-		margin-right: 0.4rem;
-		vertical-align: middle;
 	}
 
 	.secondary-link {
@@ -950,6 +962,11 @@
 	@media (max-width: 480px) {
 		.hero h1 {
 			font-size: 1.7rem;
+		}
+
+		.cta-button {
+			padding: 0.8rem 1.8rem;
+			font-size: 0.95rem;
 		}
 
 		.section h2 {
