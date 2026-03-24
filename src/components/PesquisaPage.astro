@@ -1,10 +1,11 @@
 ---
-
+const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 ---
 
 <html lang="pt-BR">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="surveyor-code" content={surveyorCode} />
 		<link rel="icon" type="image/png" href="/logo.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
@@ -252,7 +253,7 @@
 	const stepCurrent = document.getElementById('step-current')!;
 	const totalSteps = steps.length;
 	let currentStep = 1;
-	const codigo = new URLSearchParams(window.location.search).get('ref') || '';
+	const codigo = document.querySelector('meta[name="surveyor-code"]')?.getAttribute('content') || '';
 
 	function updateProgress() {
 		const pct = (currentStep / totalSteps) * 100;
