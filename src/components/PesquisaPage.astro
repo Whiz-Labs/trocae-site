@@ -132,7 +132,6 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 							</span>
 						</label>
 					</div>
-					<button type="button" class="next-btn" id="q2-next" disabled>Próximo →</button>
 				</div>
 
 				<!-- Step 3 -->
@@ -319,7 +318,6 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 	});
 
 	const q2Checkboxes = document.querySelectorAll('input[name="q2"]') as NodeListOf<HTMLInputElement>;
-	const q2NextBtn = document.getElementById('q2-next') as HTMLButtonElement;
 	const q2Counter = document.getElementById('q2-counter')!;
 	const q2Message = document.getElementById('q2-message')!;
 	const q2Status = document.getElementById('q2-status')!;
@@ -327,16 +325,15 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 	function updateQ2Status() {
 		const count = document.querySelectorAll('input[name="q2"]:checked').length;
 		q2Counter.textContent = `${count}/2`;
-		q2NextBtn.disabled = count === 0;
 
 		if (count === 0) {
-			q2Message.textContent = 'Toque para escolher até 2 opções';
+			q2Message.textContent = 'Escolha 2 opções';
 			q2Status.className = 'q2-status';
 		} else if (count === 1) {
-			q2Message.textContent = 'Você pode escolher mais 1!';
+			q2Message.textContent = 'Escolha mais 1!';
 			q2Status.className = 'q2-status q2-can-add';
 		} else {
-			q2Message.textContent = 'Pronto! Toque em Próximo';
+			q2Message.textContent = 'Pronto!';
 			q2Status.className = 'q2-status q2-done';
 		}
 	}
@@ -349,12 +346,10 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 				return;
 			}
 			updateQ2Status();
+			if (checked.length === 2) {
+				setTimeout(() => goToStep(3), 500);
+			}
 		});
-	});
-
-	q2NextBtn.addEventListener('click', () => {
-		const checked = document.querySelectorAll('input[name="q2"]:checked');
-		if (checked.length > 0) goToStep(3);
 	});
 
 	updateProgress();
