@@ -263,7 +263,7 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 				</div>
 				<div class="social-proof">
 					<span class="fire">🔥</span>
-					<span>Mais de <strong>137</strong> pessoas já entraram na lista</span>
+					<span>Mais de <strong id="signup-count">…</strong> pessoas já entraram na lista</span>
 				</div>
 				<div class="success-actions">
 					<a href="https://instagram.com/trocaeoficial" target="_blank" rel="noopener noreferrer" class="vip-btn">
@@ -471,6 +471,14 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 
 			surveyForm.style.display = 'none';
 			(document.getElementById('survey-success') as HTMLElement).style.display = 'block';
+
+			try {
+				const res = await fetch('https://script.google.com/macros/s/AKfycbzagXzGDZSFDwa5gGWbOPj8JsbIws95XOa7hXB89MLpLIEsv3UmPPBwhwwdpXMhti8/exec');
+				const { count } = await res.json();
+				document.getElementById('signup-count')!.textContent = String(count + 20);
+			} catch {
+				document.querySelector('.social-proof')!.remove();
+			}
 		} catch {
 			submitBtn.disabled = false;
 			btnText.style.display = 'inline';
