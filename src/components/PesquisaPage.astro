@@ -309,13 +309,7 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
 
 	consentCheck.addEventListener('change', () => {
-		if (consentCheck.checked) {
-			consentWarning.classList.remove('visible');
-			submitBtn.disabled = false;
-		} else {
-			consentWarning.classList.add('visible');
-			submitBtn.disabled = true;
-		}
+		consentWarning.classList.toggle('visible', !consentCheck.checked);
 	});
 
 	function goToStep(n: number) {
@@ -456,7 +450,7 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 
 		try {
 			await fetch(
-				'https://script.google.com/macros/s/AKfycbyNCcBwmtdEl0yPW1AyqOyAAB7MVvsA-y-xn9GRlXxTUdlsw2vHENrEsS8vTmH_73K0/exec',
+				'https://script.google.com/macros/s/AKfycbyVvMshDvpTQdq56cfCnGy6Q7yb8tI__dCSOUGM1lGwAzvIeMDz0YRTtZNHmMoQutcI/exec',
 				{
 					method: 'POST',
 					mode: 'no-cors',
@@ -470,6 +464,7 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 						q3,
 						q4,
 						codigo,
+						consent: consentCheck.checked ? 'sim' : 'não',
 					}),
 				}
 			);
