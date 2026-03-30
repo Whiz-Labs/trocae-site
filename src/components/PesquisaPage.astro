@@ -234,11 +234,18 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 						/>
 					</div>
 
+					<label class="consent-checkbox">
+						<input type="checkbox" id="consent-check" checked />
+						<span>Aceito receber novidades sobre o lançamento do Trocaê</span>
+					</label>
+					<p class="consent-warning" id="consent-warning" style="display:none;">
+						Sem isso, você pode perder o lançamento e seus benefícios!
+					</p>
+
 					<button type="submit" class="submit-btn" id="submit-btn">
 						<span class="btn-text">Garantir meu acesso!</span>
 						<span class="btn-loading" style="display:none;">Enviando...</span>
 					</button>
-					<p class="consent-text">Ao enviar, você concorda em receber novidades do Trocaê.</p>
 				</div>
 			</form>
 
@@ -293,6 +300,22 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 	document.getElementById('start-btn')!.addEventListener('click', () => {
 		introScreen.style.display = 'none';
 		surveyForm.style.display = 'block';
+	});
+
+	const consentCheck = document.getElementById('consent-check') as HTMLInputElement;
+	const consentWarning = document.getElementById('consent-warning')!;
+	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+
+	consentCheck.addEventListener('change', () => {
+		if (consentCheck.checked) {
+			consentWarning.style.display = 'none';
+			submitBtn.disabled = false;
+			submitBtn.style.opacity = '1';
+		} else {
+			consentWarning.style.display = 'block';
+			submitBtn.disabled = true;
+			submitBtn.style.opacity = '0.5';
+		}
 	});
 
 	function goToStep(n: number) {
@@ -394,7 +417,6 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 
 	const emailInput = document.getElementById('email') as HTMLInputElement;
 	const form = document.getElementById('survey-form') as HTMLFormElement;
-	const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
 	const btnText = submitBtn.querySelector('.btn-text') as HTMLElement;
 	const btnLoading = submitBtn.querySelector('.btn-loading') as HTMLElement;
 
@@ -637,7 +659,21 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 	.submit-btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26, 138, 138, 0.4); }
 	.submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
-	.consent-text { font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.6rem; opacity: 0.7; }
+	.consent-checkbox {
+		display: flex; align-items: flex-start; gap: 0.5rem;
+		font-size: 0.8rem; color: var(--text-muted); cursor: pointer;
+		margin-top: 0.8rem;
+	}
+	.consent-checkbox input[type="checkbox"] {
+		width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0;
+		accent-color: var(--orange); cursor: pointer;
+	}
+	.consent-warning {
+		font-size: 0.78rem; color: #e53935; text-align: center;
+		margin-top: 0.4rem; font-weight: 600;
+		animation: warningFade 0.3s ease-in;
+	}
+	@keyframes warningFade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
 
 	.success-screen { text-align: center; animation: fadeIn 0.4s ease; }
 	.success-screen h2 { font-size: 2rem; font-weight: 900; color: var(--teal); margin-bottom: 0.8rem; }
