@@ -234,13 +234,15 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 						/>
 					</div>
 
-					<label class="consent-checkbox">
-						<input type="checkbox" id="consent-check" checked />
-						<span>Aceito receber novidades sobre o lançamento do Trocaê</span>
-					</label>
-					<p class="consent-warning" id="consent-warning" style="display:none;">
-						Sem isso, você pode perder o lançamento e seus benefícios!
-					</p>
+					<div class="consent-area">
+						<label class="consent-checkbox">
+							<input type="checkbox" id="consent-check" checked />
+							<span>Aceito receber novidades sobre o lançamento do Trocaê</span>
+						</label>
+						<p class="consent-warning" id="consent-warning">
+							Sem isso, você pode perder o lançamento e seus benefícios!
+						</p>
+					</div>
 
 					<button type="submit" class="submit-btn" id="submit-btn">
 						<span class="btn-text">Garantir meu acesso!</span>
@@ -308,13 +310,11 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 
 	consentCheck.addEventListener('change', () => {
 		if (consentCheck.checked) {
-			consentWarning.style.display = 'none';
+			consentWarning.classList.remove('visible');
 			submitBtn.disabled = false;
-			submitBtn.style.opacity = '1';
 		} else {
-			consentWarning.style.display = 'block';
+			consentWarning.classList.add('visible');
 			submitBtn.disabled = true;
-			submitBtn.style.opacity = '0.5';
 		}
 	});
 
@@ -659,10 +659,12 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 	.submit-btn:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26, 138, 138, 0.4); }
 	.submit-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
 
+	.consent-area {
+		margin-top: 0.8rem; margin-bottom: 1rem;
+	}
 	.consent-checkbox {
 		display: flex; align-items: flex-start; gap: 0.5rem;
 		font-size: 0.8rem; color: var(--text-muted); cursor: pointer;
-		margin-top: 0.8rem;
 	}
 	.consent-checkbox input[type="checkbox"] {
 		width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0;
@@ -671,9 +673,12 @@ const surveyorCode = import.meta.env.PUBLIC_SURVEYOR_CODE || '';
 	.consent-warning {
 		font-size: 0.78rem; color: #e53935; text-align: center;
 		margin-top: 0.4rem; font-weight: 600;
-		animation: warningFade 0.3s ease-in;
+		visibility: hidden; opacity: 0;
+		transition: opacity 0.3s ease;
 	}
-	@keyframes warningFade { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+	.consent-warning.visible {
+		visibility: visible; opacity: 1;
+	}
 
 	.success-screen { text-align: center; animation: fadeIn 0.4s ease; }
 	.success-screen h2 { font-size: 2rem; font-weight: 900; color: var(--teal); margin-bottom: 0.8rem; }
