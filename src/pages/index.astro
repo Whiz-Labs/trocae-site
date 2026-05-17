@@ -8,41 +8,61 @@
 		<link rel="icon" type="image/png" href="/logo.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Trocaê - Troque coisas que você não usa por coisas que você precisa. Em breve em João Pessoa!" />
-		<title>Trocaê - Troque o que não usa</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+		<meta name="description" content="topaê - Faz sua troca! Troque coisas que você não usa por coisas que você precisa. Em breve em João Pessoa." />
+		<title>topaê - Faz sua troca!</title>
 	</head>
 	<body>
 		<!-- Hero Section -->
 		<nav id="navbar">
-			<img src="/logo.png" alt="Trocaê Logo" class="nav-logo" />
-			<span class="nav-brand">Trocaê</span>
+			<img src="/logo.png" alt="topaê" class="nav-logo" />
+			<span class="nav-brand">topaê</span>
 		</nav>
 		<header class="hero">
 			<div class="hero-content">
-				<img src="/logo.png" alt="Trocaê" class="hero-logo" />
-				<span class="hero-brand">Trocaê</span>
-				<h1>Troque coisas<br /><span class="highlight">que você não usa</span><br />por coisas que<br /><strong>você precisa</strong></h1>
-				<p class="hero-sub">Uma nova forma de trocar coisas está chegando.</p>
+				<img src="/wordmark.png" alt="topaê" class="hero-wordmark" />
+				<h1 class="hero-tagline">faz sua troca!</h1>
+				<p class="hero-sub">Uma nova forma de trocar coisas. <strong>Em breve em João Pessoa.</strong></p>
 				<div class="cta-wrapper">
 					<span class="cta-badge">2 meses grátis</span>
 					<a href="/pesquisa" class="cta-button">Responda a pesquisa e teste primeiro!</a>
 				</div>
 				<a href="#lista-de-espera" class="secondary-link">Ou entre na lista de espera →</a>
 			</div>
-			<div class="hero-blob blob-teal"></div>
-			<div class="hero-blob blob-orange"></div>
+			<img src="/stickers/bora-trocar.png" alt="" class="hero-sticker sticker-top-right" aria-hidden="true" />
+			<img src="/stickers/match-real.png" alt="" class="hero-sticker sticker-bottom-left" aria-hidden="true" />
 		</header>
+
+		<!-- Por que topaê? -->
+		<section id="por-que-topae" class="section naming-section">
+			<div class="naming-grid">
+				<div class="naming-visual">
+					<img src="/topae-simbolo.png" alt="topaê: wordmark com o símbolo da troca infinita escondido no aê" />
+				</div>
+				<div class="naming-text">
+					<h2>Por que <span class="brand-inline">topaê</span>?</h2>
+					<p class="naming-lede">
+						<em>"Topa?"</em> é como a gente pergunta, no Brasil, se você está dentro de uma troca.
+					</p>
+					<p class="naming-answer">
+						<strong>"Topaê!"</strong> é a resposta — <em>"tô dentro!"</em>
+					</p>
+					<p class="naming-symbol-desc">
+						E aquele símbolo escondido no <strong>"aê"</strong>? São duas setas que se conectam num ciclo infinito — porque toda troca é uma volta que dá.
+					</p>
+					<p class="naming-cta-line">
+						Você topa, alguém topa de volta, e a troca acontece.
+					</p>
+				</div>
+			</div>
+		</section>
 
 		<!-- Como Funciona -->
 		<section id="como-funciona" class="section steps-section">
-			<h2>Como funciona o Trocaê?</h2>
+			<h2>Como funciona o topaê?</h2>
 			<div class="steps">
 				<div class="step">
 					<div class="step-number">1</div>
-					<div class="step-icon">
+					<div class="step-icon step-icon-rosa">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
 					</div>
 					<h3>Tire foto</h3>
@@ -50,7 +70,7 @@
 				</div>
 				<div class="step">
 					<div class="step-number">2</div>
-					<div class="step-icon">
+					<div class="step-icon step-icon-turquesa">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
 					</div>
 					<h3>Descubra pessoas</h3>
@@ -58,7 +78,7 @@
 				</div>
 				<div class="step">
 					<div class="step-number">3</div>
-					<div class="step-icon">
+					<div class="step-icon step-icon-verde">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
 					</div>
 					<h3>Combine a troca</h3>
@@ -73,25 +93,25 @@
 			<p class="section-sub">Troque <strong>coisas</strong> que você não usa por coisas que você <strong>precisa</strong></p>
 			<div class="categories">
 				<div class="category-card">
-					<div class="category-icon">
+					<div class="category-icon category-icon-rosa">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="14" r="2"/></svg>
 					</div>
 					<span>Brinquedos</span>
 				</div>
 				<div class="category-card">
-					<div class="category-icon">
+					<div class="category-icon category-icon-pessego">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46 16 2 12 5.5 8 2 3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
-					</div>
+				</div>
 					<span>Roupas</span>
 				</div>
 				<div class="category-card">
-					<div class="category-icon">
+					<div class="category-icon category-icon-turquesa">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
 					</div>
 					<span>Livros</span>
 				</div>
 				<div class="category-card">
-					<div class="category-icon">
+					<div class="category-icon category-icon-verde">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
 					</div>
 					<span>Acessórios</span>
@@ -104,7 +124,7 @@
 			<div class="waitlist-card">
 				<div class="waitlist-badge">Vagas limitadas</div>
 				<h2>Entre na lista de espera</h2>
-				<p class="waitlist-desc">Cadastre-se agora e ganhe <strong>1 mês grátis</strong> quando o Trocaê lançar em João Pessoa!</p>
+				<p class="waitlist-desc">Cadastre-se agora e ganhe <strong>1 mês grátis</strong> quando o topaê lançar em João Pessoa!</p>
 				<div class="waitlist-gift">
 					<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>
 					<span>1 mês de uso gratuito para os primeiros cadastrados!</span>
@@ -113,7 +133,7 @@
 				<form id="waitlist-form" class="waitlist-form">
 					<div class="form-group">
 						<label for="whatsapp">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="var(--teal)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="var(--laranja)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 							WhatsApp *
 						</label>
 						<input
@@ -127,7 +147,7 @@
 					</div>
 					<div class="form-group">
 						<label for="email">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--laranja)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
 							E-mail <span class="optional">(opcional)</span>
 						</label>
 						<input
@@ -141,17 +161,17 @@
 						<span class="btn-text">Garantir minha vaga!</span>
 						<span class="btn-loading" style="display:none;">Enviando...</span>
 					</button>
-					<p class="consent-text">Ao enviar, você concorda em receber novidades do Trocaê pelo WhatsApp.</p>
+					<p class="consent-text">Ao enviar, você concorda em receber novidades do topaê pelo WhatsApp.</p>
 				</form>
 
 				<div id="form-success" class="form-message success" style="display:none;">
-					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--verde)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
 					<h3>Você está na lista!</h3>
-					<p>Quando o Trocaê lançar, você será um dos primeiros a saber e ganhará <strong>1 mês grátis</strong>!</p>
+					<p>Quando o topaê lançar, você será um dos primeiros a saber e ganhará <strong>1 mês grátis</strong>!</p>
 				</div>
 
 				<div id="form-duplicate" class="form-message duplicate" style="display:none;">
-					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--pessego)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
 					<h3>Você já está cadastrado!</h3>
 					<p>Esse WhatsApp já está na nossa lista. Fique tranquilo, vamos te avisar!</p>
 				</div>
@@ -181,9 +201,9 @@
 		<!-- Footer -->
 		<footer>
 			<div class="footer-content">
-				<img src="/logo.png" alt="Trocaê" class="footer-logo" />
-				<span class="footer-brand">trocaê</span>
-				<p>&copy; 2026 Trocaê. Todos os direitos reservados.</p>
+				<img src="/logo.png" alt="topaê" class="footer-logo" />
+				<span class="footer-brand">topaê</span>
+				<p>&copy; 2026 topaê. Todos os direitos reservados.</p>
 			</div>
 		</footer>
 	</body>
@@ -267,17 +287,87 @@
 </script>
 
 <style>
+	@font-face {
+		font-family: 'Aileron';
+		src: url('/fonts/Aileron-Regular.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Aileron';
+		src: url('/fonts/Aileron-SemiBold.woff2') format('woff2');
+		font-weight: 600;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Aileron';
+		src: url('/fonts/Aileron-Bold.woff2') format('woff2');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Aileron';
+		src: url('/fonts/Aileron-Heavy.woff2') format('woff2');
+		font-weight: 800;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Aileron';
+		src: url('/fonts/Aileron-Black.woff2') format('woff2');
+		font-weight: 900;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'StoryScript';
+		src: url('/fonts/StoryScript-Regular.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+
 	:root {
-		--teal: #1a8a8a;
-		--teal-dark: #147272;
-		--teal-light: #e0f4f4;
-		--orange: #f5a623;
-		--orange-dark: #e0941a;
-		--orange-light: #fef3e0;
-		--cream: #faf6f1;
-		--cream-dark: #f0e8dd;
-		--text-dark: #2c3e50;
-		--text-muted: #6b7c8a;
+		/* Birincil — Laranja Goiaba */
+		--laranja: #FE6520;
+		--laranja-dark: #E5571A;
+		--laranja-light: #FD9359;
+		--laranja-soft: #FEB588;
+		--laranja-pale: #FDEADC;
+
+		/* Arkaplan — Areia Clara Digital */
+		--areia: #FDF4EB;
+		--areia-dark: #F5E7D0;
+
+		/* Aksanlar */
+		--rosa: #F53973;        /* Rosa Swipe */
+		--rosa-light: #FAB2C0;
+		--rosa-pale: #FCE3E6;
+
+		--turquesa: #22C4D9;    /* Azul Turquesa */
+		--turquesa-light: #8FE3EE;
+		--turquesa-pale: #E5F7F9;
+
+		--verde: #1E8E78;       /* Verde Profundo */
+		--verde-light: #80C4AF;
+		--verde-pale: #E0EFE8;
+
+		--pessego: #FDB94E;     /* Pêssego Pop */
+		--pessego-light: #FDDB94;
+		--pessego-pale: #FDF5EA;
+
+		--lilas: #B68DEB;       /* Lilás */
+		--lilas-pale: #F0E5F6;
+
+		--khaki: #CAD474;       /* Khaki Fresh */
+		--oliva: #92A263;       /* Verde Oliva */
+
+		/* Metin */
+		--text-dark: #2C2C2C;
+		--text-muted: #6B7280;
 	}
 
 	* {
@@ -291,9 +381,9 @@
 	}
 
 	body {
-		font-family: 'Nunito', sans-serif;
+		font-family: 'Aileron', sans-serif;
 		color: var(--text-dark);
-		background: var(--cream);
+		background: var(--areia);
 		overflow-x: hidden;
 	}
 
@@ -307,7 +397,7 @@
 		align-items: center;
 		gap: 0.5rem;
 		padding: 1rem 2rem;
-		background: rgba(250, 246, 241, 0.95);
+		background: rgba(253, 244, 235, 0.95);
 		backdrop-filter: blur(10px);
 		z-index: 100;
 		border-bottom: 1px solid rgba(0,0,0,0.05);
@@ -323,12 +413,14 @@
 	.nav-logo {
 		width: 36px;
 		height: 36px;
+		object-fit: contain;
 	}
 
 	.nav-brand {
-		font-size: 1.4rem;
-		font-weight: 800;
-		color: var(--teal);
+		font-size: 1.5rem;
+		font-weight: 900;
+		color: var(--laranja);
+		letter-spacing: -0.02em;
 	}
 
 	/* Hero */
@@ -347,21 +439,24 @@
 	.hero-content {
 		position: relative;
 		z-index: 2;
+		max-width: 600px;
 	}
 
-	.hero-logo {
-		width: 100px;
-		height: 100px;
+	.hero-wordmark {
+		width: min(360px, 80vw);
+		height: auto;
 		margin-bottom: 0.2rem;
 		animation: float 3s ease-in-out infinite;
 	}
 
-	.hero-brand {
-		display: block;
-		font-size: 2rem;
-		font-weight: 900;
-		color: var(--teal);
-		margin-bottom: 0.8rem;
+	.hero-tagline {
+		font-family: 'StoryScript', cursive;
+		font-size: clamp(2.8rem, 6vw, 4rem);
+		font-weight: 400;
+		color: var(--laranja);
+		margin: 0.2rem 0 1.2rem;
+		line-height: 1;
+		transform: rotate(-3deg);
 	}
 
 	@keyframes float {
@@ -369,28 +464,16 @@
 		50% { transform: translateY(-10px); }
 	}
 
-	.hero h1 {
-		font-size: 2.8rem;
-		font-weight: 800;
-		line-height: 1.2;
-		margin-bottom: 1rem;
-		color: var(--text-dark);
-	}
-
-	.hero h1 .highlight {
-		color: var(--teal);
-		font-weight: 700;
-	}
-
-	.hero h1 strong {
-		color: var(--text-dark);
-		font-weight: 900;
-	}
-
 	.hero-sub {
 		font-size: 1.2rem;
 		color: var(--text-muted);
 		margin-bottom: 2rem;
+		line-height: 1.5;
+	}
+
+	.hero-sub strong {
+		color: var(--text-dark);
+		font-weight: 800;
 	}
 
 	.cta-wrapper {
@@ -401,7 +484,7 @@
 	}
 
 	.cta-badge {
-		background: var(--orange);
+		background: var(--rosa);
 		color: white;
 		padding: 0.25rem 0.8rem;
 		border-radius: 50px;
@@ -413,41 +496,67 @@
 	}
 
 	@keyframes pulse {
-		0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.4); }
-		50% { box-shadow: 0 0 0 8px rgba(245, 166, 35, 0); }
+		0%, 100% { box-shadow: 0 0 0 0 rgba(245, 57, 115, 0.4); }
+		50% { box-shadow: 0 0 0 8px rgba(245, 57, 115, 0); }
 	}
 
 	.cta-button {
 		display: inline-block;
-		background: var(--orange);
+		background: var(--laranja);
 		color: white;
 		padding: 1rem 2.5rem;
 		border-radius: 50px;
 		text-decoration: none;
-		font-weight: 700;
+		font-weight: 800;
 		font-size: 1.1rem;
 		transition: all 0.3s ease;
-		box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3);
+		box-shadow: 0 4px 15px rgba(254, 101, 32, 0.3);
 	}
 
 	.cta-button:hover {
-		background: var(--orange-dark);
+		background: var(--laranja-dark);
 		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4);
+		box-shadow: 0 6px 20px rgba(254, 101, 32, 0.4);
 	}
 
 	.secondary-link {
 		display: block;
 		margin-top: 1rem;
-		color: var(--teal);
+		color: var(--verde);
 		text-decoration: none;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 0.95rem;
 		transition: color 0.2s ease;
 	}
 
 	.secondary-link:hover {
-		color: var(--teal-dark);
+		color: var(--verde);
+		filter: brightness(0.85);
+	}
+
+	/* Hero stickers (decorative) */
+	.hero-sticker {
+		position: absolute;
+		pointer-events: none;
+		z-index: 1;
+		opacity: 0.9;
+	}
+
+	.sticker-top-right {
+		top: 8%;
+		right: 3%;
+		width: clamp(110px, 14vw, 180px);
+		transform: rotate(8deg);
+		animation: float 4s ease-in-out infinite;
+	}
+
+	.sticker-bottom-left {
+		bottom: 10%;
+		left: 3%;
+		width: clamp(110px, 13vw, 170px);
+		transform: rotate(-10deg);
+		animation: float 5s ease-in-out infinite;
+		animation-delay: 0.5s;
 	}
 
 	/* Survey banner (waitlist) */
@@ -455,8 +564,8 @@
 		display: flex;
 		align-items: center;
 		gap: 0.8rem;
-		background: linear-gradient(135deg, var(--teal-light), var(--orange-light));
-		border: 2px solid var(--teal);
+		background: linear-gradient(135deg, var(--turquesa-pale), var(--pessego-pale));
+		border: 2px solid var(--turquesa);
 		border-radius: 14px;
 		padding: 1rem 1.2rem;
 		text-decoration: none;
@@ -471,7 +580,7 @@
 
 	.survey-banner:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 4px 15px rgba(26, 138, 138, 0.15);
+		box-shadow: 0 4px 15px rgba(34, 196, 217, 0.2);
 	}
 
 	.survey-banner-icon {
@@ -489,38 +598,13 @@
 	.survey-banner-text strong {
 		font-size: 0.95rem;
 		font-weight: 800;
-		color: var(--teal-dark);
+		color: var(--text-dark);
 	}
 
 	.survey-banner-text span {
 		font-size: 0.85rem;
 		color: var(--text-muted);
 		font-weight: 600;
-	}
-
-	/* Blobs */
-	.hero-blob {
-		position: absolute;
-		border-radius: 50%;
-		opacity: 0.15;
-	}
-
-	.blob-teal {
-		width: 400px;
-		height: 400px;
-		background: var(--teal);
-		bottom: -100px;
-		left: -100px;
-		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-	}
-
-	.blob-orange {
-		width: 300px;
-		height: 300px;
-		background: var(--orange);
-		top: 80px;
-		right: -80px;
-		border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
 	}
 
 	/* Sections */
@@ -532,7 +616,7 @@
 
 	.section h2 {
 		font-size: 2.2rem;
-		font-weight: 800;
+		font-weight: 900;
 		text-align: center;
 		margin-bottom: 0.5rem;
 		color: var(--text-dark);
@@ -545,11 +629,138 @@
 		margin-bottom: 3rem;
 	}
 
+	.section-sub strong {
+		color: var(--laranja);
+		font-weight: 900;
+	}
+
+	/* Naming section — "Por que topaê?" */
+	.naming-section {
+		padding-top: 5rem;
+		padding-bottom: 6rem;
+	}
+
+	.naming-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		align-items: center;
+	}
+
+	.naming-visual {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.naming-visual img {
+		max-width: 100%;
+		width: min(480px, 95%);
+		height: auto;
+		transform: rotate(-3deg);
+		transition: transform 0.4s ease;
+	}
+
+	.naming-visual img:hover {
+		transform: rotate(0deg) scale(1.02);
+	}
+
+	.naming-text h2 {
+		text-align: left;
+		font-size: 2.4rem;
+		font-weight: 900;
+		margin-bottom: 1.2rem;
+		line-height: 1.1;
+	}
+
+	.naming-text h2 .brand-inline {
+		color: var(--laranja);
+		font-style: italic;
+	}
+
+	.naming-lede,
+	.naming-answer,
+	.naming-symbol-desc,
+	.naming-cta-line {
+		font-size: 1.1rem;
+		line-height: 1.6;
+		color: var(--text-dark);
+	}
+
+	.naming-lede {
+		color: var(--text-muted);
+		margin-bottom: 0.4rem;
+	}
+
+	.naming-lede em {
+		font-family: 'StoryScript', cursive;
+		font-style: normal;
+		font-size: 1.5rem;
+		color: var(--laranja);
+		vertical-align: -2px;
+		margin-right: 0.1rem;
+	}
+
+	.naming-answer {
+		font-size: 1.4rem;
+		margin-bottom: 1.4rem;
+	}
+
+	.naming-answer strong {
+		font-family: 'StoryScript', cursive;
+		font-weight: 400;
+		font-size: 2.4rem;
+		color: var(--laranja);
+		vertical-align: -4px;
+		margin-right: 0.2rem;
+	}
+
+	.naming-answer em {
+		color: var(--text-muted);
+		font-style: italic;
+	}
+
+	.naming-symbol-desc {
+		margin-bottom: 1rem;
+		color: var(--text-muted);
+	}
+
+	.naming-symbol-desc strong {
+		color: var(--laranja);
+		font-weight: 800;
+	}
+
+	.naming-cta-line {
+		font-weight: 800;
+		color: var(--text-dark);
+		padding-top: 0.6rem;
+		border-top: 2px dashed var(--laranja-soft);
+	}
+
+	@media (max-width: 768px) {
+		.naming-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+		.naming-text h2 {
+			text-align: center;
+			font-size: 2rem;
+		}
+		.naming-lede,
+		.naming-answer,
+		.naming-symbol-desc,
+		.naming-cta-line {
+			text-align: center;
+		}
+		.naming-visual img {
+			width: min(320px, 80%);
+		}
+	}
+
 	/* Steps */
 	.steps-section {
 		background: white;
 		border-radius: 24px;
-		margin-top: -2rem;
 		padding: 4rem 2rem;
 		box-shadow: 0 4px 30px rgba(0,0,0,0.06);
 	}
@@ -583,7 +794,7 @@
 		transform: translateX(-50%);
 		width: 28px;
 		height: 28px;
-		background: var(--orange);
+		background: var(--laranja);
 		color: white;
 		border-radius: 50%;
 		font-weight: 800;
@@ -597,19 +808,21 @@
 		width: 90px;
 		height: 90px;
 		margin: 1rem auto;
-		background: var(--teal-light);
 		border-radius: 50%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: var(--teal);
 	}
+
+	.step-icon-rosa     { background: var(--rosa-pale);     color: var(--rosa); }
+	.step-icon-turquesa { background: var(--turquesa-pale); color: var(--turquesa); }
+	.step-icon-verde    { background: var(--verde-pale);    color: var(--verde); }
 
 	.step h3 {
 		font-size: 1.2rem;
-		font-weight: 700;
+		font-weight: 800;
 		margin: 1rem 0 0.5rem;
-		color: var(--teal-dark);
+		color: var(--text-dark);
 	}
 
 	.step p {
@@ -652,16 +865,19 @@
 		width: 80px;
 		height: 80px;
 		margin: 0 auto 1rem;
-		background: var(--cream);
 		border-radius: 16px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: var(--teal);
 	}
 
+	.category-icon-rosa     { background: var(--rosa-pale);     color: var(--rosa); }
+	.category-icon-pessego  { background: var(--pessego-pale);  color: var(--pessego); }
+	.category-icon-turquesa { background: var(--turquesa-pale); color: var(--turquesa); }
+	.category-icon-verde    { background: var(--verde-pale);    color: var(--verde); }
+
 	.category-card span {
-		font-weight: 700;
+		font-weight: 800;
 		font-size: 1.05rem;
 		color: var(--text-dark);
 	}
@@ -688,7 +904,7 @@
 		position: absolute;
 		width: 250px;
 		height: 250px;
-		background: var(--teal);
+		background: var(--laranja);
 		opacity: 0.06;
 		border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
 		bottom: -80px;
@@ -700,7 +916,7 @@
 		position: absolute;
 		width: 200px;
 		height: 200px;
-		background: var(--orange);
+		background: var(--rosa);
 		opacity: 0.06;
 		border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
 		top: -60px;
@@ -709,7 +925,7 @@
 
 	.waitlist-badge {
 		display: inline-block;
-		background: var(--orange);
+		background: var(--rosa);
 		color: white;
 		padding: 0.4rem 1.2rem;
 		border-radius: 50px;
@@ -719,11 +935,6 @@
 		letter-spacing: 0.5px;
 		margin-bottom: 1.2rem;
 		animation: pulse 2s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0.4); }
-		50% { box-shadow: 0 0 0 12px rgba(245, 166, 35, 0); }
 	}
 
 	.waitlist-card h2 {
@@ -739,16 +950,16 @@
 	}
 
 	.waitlist-desc strong {
-		color: var(--teal);
-		font-weight: 800;
+		color: var(--laranja);
+		font-weight: 900;
 	}
 
 	.waitlist-gift {
 		display: flex;
 		align-items: center;
 		gap: 0.75rem;
-		background: var(--orange-light);
-		border: 2px solid var(--orange);
+		background: var(--pessego-pale);
+		border: 2px solid var(--pessego);
 		border-radius: 12px;
 		padding: 1rem 1.2rem;
 		margin-bottom: 2rem;
@@ -759,7 +970,7 @@
 
 	.waitlist-gift svg {
 		flex-shrink: 0;
-		color: var(--orange);
+		color: var(--pessego);
 	}
 
 	.waitlist-gift span {
@@ -785,7 +996,7 @@
 		display: flex;
 		align-items: center;
 		gap: 0.4rem;
-		font-weight: 700;
+		font-weight: 800;
 		font-size: 0.9rem;
 		margin-bottom: 0.4rem;
 		color: var(--text-dark);
@@ -802,17 +1013,17 @@
 		padding: 0.9rem 1rem;
 		border: 2px solid #e0e0e0;
 		border-radius: 12px;
-		font-family: 'Nunito', sans-serif;
+		font-family: 'Aileron', sans-serif;
 		font-size: 1rem;
 		font-weight: 600;
 		color: var(--text-dark);
 		transition: border-color 0.3s ease;
-		background: var(--cream);
+		background: var(--areia);
 	}
 
 	.form-group input:focus {
 		outline: none;
-		border-color: var(--teal);
+		border-color: var(--laranja);
 		background: white;
 	}
 
@@ -822,24 +1033,24 @@
 	}
 
 	.submit-btn {
-		background: var(--teal);
+		background: var(--laranja);
 		color: white;
 		border: none;
 		padding: 1rem;
 		border-radius: 12px;
-		font-family: 'Nunito', sans-serif;
+		font-family: 'Aileron', sans-serif;
 		font-size: 1.1rem;
-		font-weight: 800;
+		font-weight: 900;
 		cursor: pointer;
 		transition: all 0.3s ease;
-		box-shadow: 0 4px 15px rgba(26, 138, 138, 0.3);
+		box-shadow: 0 4px 15px rgba(254, 101, 32, 0.3);
 		margin-top: 0.5rem;
 	}
 
 	.submit-btn:hover {
-		background: var(--teal-dark);
+		background: var(--laranja-dark);
 		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(26, 138, 138, 0.4);
+		box-shadow: 0 6px 20px rgba(254, 101, 32, 0.4);
 	}
 
 	.consent-text {
@@ -865,6 +1076,7 @@
 
 	.form-message h3 {
 		font-size: 1.3rem;
+		font-weight: 900;
 		margin: 1rem 0 0.5rem;
 	}
 
@@ -874,8 +1086,8 @@
 		line-height: 1.5;
 	}
 
-	.form-message.success h3 { color: var(--teal); }
-	.form-message.duplicate h3 { color: var(--orange-dark); }
+	.form-message.success h3 { color: var(--verde); }
+	.form-message.duplicate h3 { color: var(--pessego); }
 	.form-message.error h3 { color: #e74c3c; }
 
 	.social-links {
@@ -890,22 +1102,22 @@
 		gap: 0.5rem;
 		color: var(--text-dark);
 		text-decoration: none;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 1.05rem;
 		padding: 0.7rem 1.5rem;
 		border-radius: 12px;
-		background: var(--cream);
+		background: var(--areia);
 		transition: all 0.3s ease;
 	}
 
 	.instagram-link:hover {
-		background: var(--cream-dark);
+		background: var(--areia-dark);
 		transform: translateY(-2px);
 	}
 
 	/* Footer */
 	footer {
-		background: var(--teal-dark);
+		background: var(--laranja);
 		color: white;
 		padding: 2rem;
 		text-align: center;
@@ -925,22 +1137,18 @@
 	}
 
 	.footer-brand {
-		font-size: 1.3rem;
-		font-weight: 800;
+		font-size: 1.4rem;
+		font-weight: 900;
 	}
 
 	footer p {
 		font-size: 0.85rem;
-		opacity: 0.7;
+		opacity: 0.85;
 		margin-top: 0.5rem;
 	}
 
 	/* Responsive */
 	@media (max-width: 768px) {
-		.hero h1 {
-			font-size: 2rem;
-		}
-
 		.steps {
 			grid-template-columns: 1fr;
 			gap: 1rem;
@@ -950,20 +1158,16 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 
-		.cta-content h2 {
-			font-size: 2rem;
-		}
-
 		nav {
 			padding: 0.8rem 1.2rem;
+		}
+
+		.hero-sticker {
+			opacity: 0.7;
 		}
 	}
 
 	@media (max-width: 480px) {
-		.hero h1 {
-			font-size: 1.7rem;
-		}
-
 		.cta-button {
 			padding: 0.8rem 1.8rem;
 			font-size: 0.95rem;
@@ -977,5 +1181,8 @@
 			grid-template-columns: 1fr 1fr;
 			gap: 1rem;
 		}
+
+		.sticker-top-right { top: 4%; right: 2%; width: 90px; }
+		.sticker-bottom-left { bottom: 6%; left: 2%; width: 90px; }
 	}
 </style>
